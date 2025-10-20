@@ -14,7 +14,7 @@ The goal was to design an **end-to-end intelligent recommendation system** that 
 - Automated the **generation of self-assessment survey items** using **Gemini API (Text Generation)**, which produced adaptive, behavior-based questions.  
 - Deployed and piloted the survey for validation with the client’s HR and Learning teams.  
 
-🧰 *Tools:* Python · Gemini API · Pandas · YAML configuration  
+🧰 *Tools:* JavaScript · Gemini API · Pandas · YAML configuration  
 
 ---
 
