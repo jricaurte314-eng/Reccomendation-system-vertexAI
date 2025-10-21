@@ -25,7 +25,7 @@ The goal was to design an **end-to-end intelligent recommendation system** that 
 
 🧠 *Key Concept:* Embedding-based skill matching improves precision in content alignment for L&D systems.  
 
-🧰 *Tools:* Python · Gemini API (Text Embeddings) · Scikit-learn · Numpy  
+🧰 *Tools:* JavaScript · Python · Gemini API (Text Embeddings) · Scikit-learn · Numpy  
 
 ---
 
