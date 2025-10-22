@@ -1,0 +1,158 @@
+default:
+  minutos_objetivo: 240
+  tolerancia_minutos: [210, 300]     # banda un poco más amplia para ayudar al ILP
+  hard_filters:
+    excluir_idiomas: ["Portugués"]
+  preferencias:
+    priorizar_recencia: true
+    ubits_max_vale_mas: true
+    priorizar_app: true
+    partners_priorizados:
+      - UBITS
+      - TED
+      - Harvard
+      - IE University
+      - AWS
+      - Microsoft
+      - Linux
+      - Bureau Veritas
+      - CertNexus
+  diversidad:
+    minimo_tipos: []                 # se controla por nivel abajo
+    max_por_partner: 0.65            # sube si el universo es chico
+  pesos:
+
+    # Nivel
+    nivel_match_exacto: 0.5
+    nivel_un_abajo: 0.2
+    nivel_un_arriba: 0.1
+    # Preferencias
+    partner_priorizado: 0.2
+    tipo_priorizado: 0.25
+    ubits_max: 0.3
+    recencia: 0.25
+    csat: 0.25
+
+
+    habilidades:
+  Análisis de negocios - N1 - E:
+    niveles:
+      Básico:
+        meta: &id001
+          objetivo: Adquirir fundamentos y ejemplos prácticos inmediatos.
+        preferencias:
+          tipos_priorizados: &id002
+          - Charla
+          - Short
+          - Artículo
+        diversidad:
+          minimo_tipos: &id003
+          - Charla
+  Análisis de negocios - N1 - H:
+    niveles:
+      Básico:
+        meta: *id001
+        preferencias:
+          tipos_priorizados: *id002
+        diversidad:
+          minimo_tipos: *id003
+  Análisis de negocios - N1 - M:
+    niveles:
+      Básico:
+        meta: *id001
+        preferencias:
+          tipos_priorizados: *id002
+        diversidad:
+          minimo_tipos: *id003
+  Análisis de negocios - N2 - E:
+    niveles:
+      Intermedio:
+        meta: &id004
+          objetivo: Desarrollar competencias técnicas y analíticas con aplicación
+            práctica.
+        preferencias:
+          tipos_priorizados: &id005
+          - Curso
+          - Taller
+          - Caso
+          - Artículo
+        diversidad:
+          minimo_tipos: &id006
+          - Curso
+  Análisis de negocios - N2 - H:
+    niveles:
+      Intermedio:
+        meta: *id004
+        preferencias:
+          tipos_priorizados: *id005
+        diversidad:
+          minimo_tipos: *id006
+  Análisis de negocios - N2 - M:
+    niveles:
+      Intermedio:
+        meta: *id004
+        preferencias:
+          tipos_priorizados: *id005
+        diversidad:
+          minimo_tipos: *id006
+  Análisis de negocios - N3 - E:
+    niveles:
+      Intermedio:
+        meta: &id007
+          objetivo: Fortalecer la toma de decisiones técnicas y el uso de herramientas
+            avanzadas.
+        preferencias:
+          tipos_priorizados: &id008
+          - Documento técnico
+          - Caso
+          - Taller
+          - Curso
+        diversidad:
+          minimo_tipos: &id009
+          - Documento técnico
+  Análisis de negocios - N3 - H:
+    niveles:
+      Intermedio:
+        meta: *id007
+        preferencias:
+          tipos_priorizados: *id008
+        diversidad:
+          minimo_tipos: *id009
+  Análisis de negocios - N3 - M:
+    niveles:
+      Intermedio:
+        meta: *id007
+        preferencias:
+          tipos_priorizados: *id008
+        diversidad:
+          minimo_tipos: *id009
+  Análisis de negocios - N4 - E:
+    niveles:
+     Avanzado:
+        meta: &id010
+          objetivo: Desarrollar habilidades técnicas avanzadas, pensamiento estratégico,
+            innovación y visión de negocio relacionados con data.
+        preferencias:
+          tipos_priorizados: &id011
+          - Documento técnico
+          - Caso
+          - Artículo
+        diversidad:
+          minimo_tipos: &id012
+          - Documento técnico
+  Análisis de negocios - N4 - H:
+    niveles:
+     Avanzado:
+        meta: *id010
+        preferencias:
+          tipos_priorizados: *id011
+        diversidad:
+          minimo_tipos: *id012
+  Análisis de negocios - N4 - M:
+    niveles:
+     Avanzado:
+        meta: *id010
+        preferencias:
+          tipos_priorizados: *id011
+        diversidad:
+          minimo_tipos: *id012
