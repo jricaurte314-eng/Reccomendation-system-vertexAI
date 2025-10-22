@@ -9,42 +9,22 @@ The goal was to design an **end-to-end intelligent recommendation system** that 
 
 ## ⚙️ Project Workflow  
 
-### **1️⃣ Skill Diagnosis and Survey Automation**
-- Conducted a **competency diagnosis** by reviewing and redefining data-related skills based on **Bloom’s taxonomy**, establishing **four performance levels** per skill.  
-- Automated the **generation of self-assessment survey items** using **Gemini API (Text Generation)**, which produced adaptive, behavior-based questions.  
-- Deployed and piloted the survey for validation with the client’s HR and Learning teams.  
+### 1️⃣ Skill Diagnosis and Survey Generation
+- Uses generative AI (Gemini) to automatically create self-assessment surveys based on Bloom’s taxonomy.  
+- Employees complete the survey, and results are scored per skill level (Basic → Advanced).
 
-🧰 *Tools:* JavaScript · Gemini API · Pandas · YAML configuration  
+### 2️⃣ Skill–Course Mapping
+- AI models convert skill descriptions and course metadata into numerical **embeddings** (semantic vectors).  
+- The system measures similarity between employee needs and available courses to find the best matches.
 
----
+### 3️⃣ Intelligent Recommendation Engine
+- Applies optimization algorithms (**ILP** or **Greedy**) to select the most relevant and diverse courses for each employee.  
+- Balances factors such as course duration, difficulty level, quality scores (CSAT/NPS), and topic diversity.
 
-### **2️⃣ Skill-Course Homologation using Semantic Embeddings**
-- Implemented **semantic similarity matching** between client-requested skills and our catalog of learning content.  
-- Used **text embeddings and cosine similarity** (via Gemini Embeddings API) to align skills, topics, and courses.  
-- Applied a **re-ranking algorithm** to optimize relevance between requested and available learning assets.  
-
-🧠 *Key Concept:* Embedding-based skill matching improves precision in content alignment for L&D systems.  
-
-🧰 *Tools:* JavaScript · Python · Gemini API (Text Embeddings) · Scikit-learn · Numpy  
-
----
-
-### **3️⃣ Content Recommendation Engine**
-- Designed a **recommendation system** based on content metadata and business rules co-defined with the client.  
-- Implemented **Integer Linear Programming (ILP)** and **Greedy Selection algorithms** to optimize recommendations under multiple criteria (e.g., skill relevance, time availability, quality metrics).  
-- Configured key decision criteria in a **YAML file**, enabling explainability and traceability of the recommendation process.  
-
-🧰 *Tools:* Python · PuLP (ILP) · YAML · Pandas  
-
----
-
-### **4️⃣ Personalized Content Assignment**
-- Developed a **content assignment algorithm per user**, taking into account training time limits, skill levels, and similarity thresholds.  
-- Used **Jaccard similarity** and **textual analysis** to ensure course diversity and alignment with targeted skills.  
-- Integrated client feedback iteratively to refine mapping quality and user experience.  
-
-🧰 *Tools:* Python · Numpy · Scikit-learn · Text Similarity  
-
+### 4️⃣ Personalized Learning Plans
+- Builds a **custom plan per person**, fitting within available learning time (e.g., 3–6 hours).  
+- Ensures diversity of content and avoids duplicates.  
+- Generates Excel reports with learning routes and summaries ready for HR review.
 ---
 
 ## 📊 Results & Impact  
@@ -56,14 +36,13 @@ The goal was to design an **end-to-end intelligent recommendation system** that 
 
 ---
 
-## 🧰 Tech Stack  
+## 🧰 Tools and Technologies
 
-| Category | Tools & Technologies |
-|-----------|---------------------|
-| Programming | Python (pandas, numpy, scikit-learn, PuLP) |
-| AI & NLP | Gemini API (Text Embeddings, Text Generation) |
-| Optimization | ILP, Greedy Selection, Cosine Similarity |
-| Data Handling | YAML, Pandas, BigQuery (for storage integration) |
-| Deployment | Vertex AI (pipeline orchestration) |
-
+| Category | Tools & Platforms |
+|-----------|------------------|
+| AI & NLP | Gemini API (Text & Embeddings) |
+| Programming | Python · JavaScript (Apps Script) |
+| Data | Pandas · YAML · Excel (xlsxwriter) |
+| Optimization | PuLP (ILP) · Greedy algorithms |
+| Deployment | Vertex AI · Google Sheets (survey integration) |
 ---
